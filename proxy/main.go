@@ -201,11 +201,13 @@ func (self *Proxy) ServeHTTP(wri http.ResponseWriter, req *http.Request) {
 		scheme = "https"
 	}
 
+	transport.DisableKeepAlives = true
+
 	*out = *pr.Request
 	out.Proto = "HTTP/1.1"
 	out.ProtoMajor = 1
 	out.ProtoMinor = 1
-	out.Close = false
+	out.Close = true
 
 	out.URL.Scheme = scheme
 
@@ -255,6 +257,7 @@ func (self *Proxy) ServeHTTP(wri http.ResponseWriter, req *http.Request) {
 	}
 
 	/* Closing */
+	pr.Request.Close = true
 	pr.Response.Body.Close()
 
 	for i, _ := range wclosers {
@@ -311,6 +314,7 @@ func (self *Proxy) Start() error {
 	self.srv = http.Server{
 		Addr:    self.Bind,
 		Handler: self,
+		ReadTimeout: 5*time.Second,
 	}
 
 	log.Printf("Hyperfox is ready.\n")
@@ -327,6 +331,7 @@ func (self *Proxy) StartTLS(cert string, key string) error {
 	self.srv = http.Server{
 		Addr:    self.Bind,
 		Handler: self,
+		ReadTimeout: 5*time.Second,
 	}
 
 	log.Printf("Hyperfox is ready.\n")
