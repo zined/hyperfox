@@ -12,11 +12,11 @@ package main
 import (
 	"errors"
 	"flag"
-	"github.com/xiam/hyperfox/proxy"
-	"github.com/xiam/hyperfox/tools/inject"
-	"github.com/xiam/hyperfox/tools/intercept"
-	"github.com/xiam/hyperfox/tools/logger"
-	"github.com/xiam/hyperfox/tools/save"
+	"github.com/zined/hyperfox/proxy"
+	"github.com/zined/hyperfox/tools/inject"
+	"github.com/zined/hyperfox/tools/intercept"
+	"github.com/zined/hyperfox/tools/logger"
+	"github.com/zined/hyperfox/tools/save"
 	"log"
 	"os"
 )

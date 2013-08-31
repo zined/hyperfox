@@ -13,7 +13,7 @@ import (
 	"bytes"
 	"errors"
 	"fmt"
-	"github.com/xiam/hyperfox/proxy"
+	"github.com/zined/hyperfox/proxy"
 	"io"
 	"io/ioutil"
 	"log"

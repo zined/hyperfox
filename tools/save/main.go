@@ -12,7 +12,7 @@ package save
 import (
 	"errors"
 	"fmt"
-	"github.com/xiam/hyperfox/proxy"
+	"github.com/zined/hyperfox/proxy"
 	"io"
 	"os"
 	"path"

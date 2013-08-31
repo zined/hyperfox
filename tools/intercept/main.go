@@ -11,7 +11,7 @@ package intercept
 
 import (
 	"fmt"
-	"github.com/xiam/hyperfox/proxy"
+	"github.com/zined/hyperfox/proxy"
 	"io/ioutil"
 	"os"
 	"strconv"
